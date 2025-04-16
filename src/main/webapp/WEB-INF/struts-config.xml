@@ -2,14 +2,14 @@
     "http://struts.apache.org/dtds/struts-config_1_3.dtd">
 <struts-config>
     <form-beans>
-        <form-bean name="exampleForm" type="com.example.forms.ExampleForm">
+        <form-bean name="exampleForm" type="org.apache.struts.validator.DynaValidatorForm">
           <form-property name="message" type="java.lang.String" />
           <form-property name="exampleField" type="java.lang.String" />
         </form-bean>
     </form-beans>
 
     <action-mappings>
-        <action path="/example" type="com.example.actions.ExampleAction" name="exampleForm" scope="request" input="/example.jsp">
+        <action path="/example" type="com.example.actions.ExampleAction" name="exampleForm" scope="request" input="/example.jsp" validate="false">
             <forward name="success" path="/success.jsp"/>
         </action>
     </action-mappings>
